@@ -24,4 +24,4 @@ jobs:
         run: dotnet build ./CI-CID-DEMO.sln --configuration Release
              
       - name: Publish
-        run: dotnet publish ./CI-CID-DEMO.sln --configuration Release  -no-bulid
+        run: dotnet publish ./CI-CID-DEMO.sln --configuration Release
