@@ -21,7 +21,7 @@ jobs:
         run: dotnet restore ./CI-CID-DEMO.sln
            
       - name: Build
-        run: dotnet build ./CI-CID-DEMO.sln --configuration Release  -no-restore
+        run: dotnet build ./CI-CID-DEMO.sln --configuration Release
              
       - name: Publish
         run: dotnet publish ./CI-CID-DEMO.sln --configuration Release  -no-bulid
