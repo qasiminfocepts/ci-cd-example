@@ -1,0 +1,27 @@
+name: publish_cicd
+
+on:
+ workflow_dispatch:
+ push:
+    branches:
+    - main
+ 
+jobs:
+  publsih:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: action/setup-dotnet@v3
+        with: 
+         dotnet-version: '3.1.x'
+         
+      - name: Restore
+        run: dotnet restore ./CI-CID-DEMO.sln
+           
+      - name: Build
+        run: dotnet build ./CI-CID-DEMO.sln --configuration Release  -no-restore
+             
+      - name: Publish
+        run: dotnet publish ./CI-CID-DEMO.sln --configuration Release  -no-bulid
