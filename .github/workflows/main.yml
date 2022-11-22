@@ -3,8 +3,7 @@ name: publish_cicd
 on:
  workflow_dispatch:
  push:
-    branches:
-    - main
+    branches: [master]
  
 env:
   AZURE_WEBAPP_NAME: cid-cd-example
