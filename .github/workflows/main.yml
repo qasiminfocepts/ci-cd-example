@@ -31,7 +31,7 @@ jobs:
       - name: Publish
         run: dotnet publish ./CI-CID-DEMO.sln --configuration Release --output '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
         
-      - name: deployment
+      - name: Deployment
         uses: actions/webapps-deploy@v2
         with:
            appname: ${{ env.AZURE_WEBAPP_NAME }}
